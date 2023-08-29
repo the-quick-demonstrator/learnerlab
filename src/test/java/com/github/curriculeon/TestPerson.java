@@ -1,0 +1,42 @@
+package com.github.curriculeon;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class TestPerson {
+    @Test
+    public void testConstructor() {
+        // given
+        long expectedId = 10l;
+        String expectedName = "Leon";
+
+        // when
+        Person person = new Person(expectedId, expectedName);
+        long actualId = person.getId();
+        String actualName = person.getName();
+
+        // then
+        Assert.assertEquals(expectedId, actualId);
+        Assert.assertEquals(expectedName, actualName);
+
+    }
+
+    @Test
+    public void testSetName() {
+        // given
+        String expectedName = "Leon";
+        Person person = new Person(null, null);
+        Assert.assertNotEquals(expectedName, person.getName());
+
+        // when - the method that we are actually testing
+        person.setName(expectedName);
+        String actualName = person.getName();
+
+        // then
+        Assert.assertEquals(expectedName, actualName);
+
+    }
+
+
+
+}
